@@ -1,8 +1,9 @@
-(function($bs) {
+/** Make sure you include this after bootstrap js */
+(function ($bs) {
     const CLASS_NAME = 'has-child-dropdown-show';
-    $bs.Dropdown.prototype.toggle = function(_orginal) {
-        return function() {
-            document.querySelectorAll('.' + CLASS_NAME).forEach(function(e) {
+    $bs.Dropdown.prototype.toggle = function (_orginal) {
+        return function () {
+            document.querySelectorAll('.' + CLASS_NAME).forEach(function (e) {
                 e.classList.remove(CLASS_NAME);
             });
             let dd = this._element.closest('.dropdown').parentNode.closest('.dropdown');
@@ -13,8 +14,8 @@
         }
     }($bs.Dropdown.prototype.toggle);
 
-    document.querySelectorAll('.dropdown').forEach(function(dd) {
-        dd.addEventListener('hide.bs.dropdown', function(e) {
+    document.querySelectorAll('.dropdown').forEach(function (dd) {
+        dd.addEventListener('hide.bs.dropdown', function (e) {
             if (this.classList.contains(CLASS_NAME)) {
                 this.classList.remove(CLASS_NAME);
                 e.preventDefault();
@@ -24,8 +25,8 @@
     });
 
     // for hover
-    document.querySelectorAll('.dropdown-hover, .dropdown-hover-all .dropdown').forEach(function(dd) {
-        dd.addEventListener('mouseenter', function(e) {
+    document.querySelectorAll('.dropdown-hover, .dropdown-hover-all .dropdown').forEach(function (dd) {
+        dd.addEventListener('mouseenter', function (e) {
             let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
             if (!toggle.classList.contains('show')) {
                 $bs.Dropdown.getOrCreateInstance(toggle).toggle();
@@ -33,7 +34,7 @@
                 $bs.Dropdown.clearMenus();
             }
         });
-        dd.addEventListener('mouseleave', function(e) {
+        dd.addEventListener('mouseleave', function (e) {
             let toggle = e.target.querySelector(':scope>[data-bs-toggle="dropdown"]');
             if (toggle.classList.contains('show')) {
                 $bs.Dropdown.getOrCreateInstance(toggle).toggle();
