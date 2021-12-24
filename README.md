@@ -1,10 +1,10 @@
 # Bootstrap 5 Multiple Level Dropdown.
 
-Using official HTML without adding extra CSS styles and classes, it's just like native support.
+Use standard Bootstrap markup without having to add any extra CSS styles and classes, it's just like having native support.
 
-All things listed in https://v5.getbootstrap.com/docs/5.0/components/dropdowns/ are not affected. You can use css classes and js methods/events/options freely.
+Everything mentioned in https://v5.getbootstrap.com/docs/5.1/components/dropdowns/ should just work. You can use any of the css classes and js methods/events/options.
 
-Dropdown of bootstrap can be easily changed to infinite level. It's a pity that they didn't do it.
+Multi level dropdowns are a very common use case and relatively easy to implement in Bootstrap 5, seems like a glaring omission in core - this package solves that.
 
 ## Usage
 
@@ -15,7 +15,15 @@ Just add the js after your bootstrap js:
 <script src="https://example.com/bootstrap5-multi-level-dropdown-browser.js"></script>
 ```
 
-Or use the module if you're using a build tool.
+Or include the module if you're using a build tool.
+
+```json
+/* In your package.json deps */
+"bootstrap5-multi-level-dropdown": "github:moussaclarke/bootstrap-5-multi-level-dropdown"
+
+```js
+import 'bootstrap5-multi-level-dropdown/js/bootstrap5-multi-level-dropdown-module.js';
+```
 
 #### Base Example
 ```html
@@ -54,7 +62,7 @@ Or use the module if you're using a build tool.
 <script src="https://example.com/bootstrap5-multi-level-dropdown-browser.js"></script>
 ```
 ### Hover
-If you want a hover trigger, just add class and some custom styles to reduce spacing to avoid triggering mouseleave.
+If you want a hover trigger, you can just add class and some custom styles to reduce spacing to avoid triggering mouseleave.
 ```css
 .dropdown-hover-all .dropdown-menu,
 .dropdown-hover > .dropdown-menu.dropend {
