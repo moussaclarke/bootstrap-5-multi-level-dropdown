@@ -1,6 +1,6 @@
 {
     "name": "bootstrap5-multi-level-dropdown",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Bootstrap 5 Multiple Level Dropdown",
     "main": "js/module.js",
     "repository": {
