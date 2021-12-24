@@ -17,9 +17,9 @@ Just add the js after your bootstrap js:
 
 Or include the module if you're using a build tool.
 
-```json
-/* In your package.json deps */
-"bootstrap5-multi-level-dropdown": "github:moussaclarke/bootstrap-5-multi-level-dropdown"
+```bash
+npm i bootstrap5-multi-level-dropdown
+```
 
 ```js
 import 'bootstrap5-multi-level-dropdown/js/bootstrap5-multi-level-dropdown-module.js';
